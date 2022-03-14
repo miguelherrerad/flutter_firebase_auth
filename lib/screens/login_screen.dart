@@ -73,10 +73,15 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
         child: Container(
           color: Colors.white,
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[emailField, passwordField, loginButton],
+          child: Padding(
+            padding: const EdgeInsets.all(36.0),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[emailField, passwordField, loginButton],
+              ),
             ),
           ),
         ),
