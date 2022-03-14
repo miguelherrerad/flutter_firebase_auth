@@ -9,13 +9,50 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   // form key
-  final _formkey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   // editing controller
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    //email field
+    final emailField = TextFormField(
+      autofocus: false,
+      controller: emailController,
+      keyboardType: TextInputType.emailAddress,
+      //validator: () {},
+      onSaved: (value) {
+        emailController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
+    //email field
+    final passwordField = TextFormField(
+      autofocus: false,
+      controller: passwordController,
+      //validator: () {},
+      onSaved: (value) {
+        passwordController.text = value!;
+      },
+      textInputAction: TextInputAction.done,
+    );
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+          child: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: <Widget>[emailField, passwordField],
+            ),
+          ),
+        ),
+      )),
+    );
   }
 }
