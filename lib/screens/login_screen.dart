@@ -80,7 +80,21 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[emailField, passwordField, loginButton],
+                children: <Widget>[
+                  SizedBox(
+                      height: 200,
+                      child: Image.asset(
+                        "assets/logo.png",
+                        fit: BoxFit.contain,
+                      )),
+                  SizedBox(height: 45),
+                  emailField,
+                  SizedBox(height: 25),
+                  passwordField,
+                  SizedBox(height: 35),
+                  loginButton,
+                  SizedBox(height: 15),
+                ],
               ),
             ),
           ),
