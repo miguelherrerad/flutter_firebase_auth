@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final passwordField = TextFormField(
       autofocus: false,
       controller: passwordController,
+
       obscureText: true,
 
       //validator: () {},
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(38),
-      color: Colors.redAccent,
+      color: Color.fromRGBO(1, 103, 169, 1),
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
