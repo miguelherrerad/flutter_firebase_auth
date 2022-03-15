@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.mail),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
+          hintText: "Correo",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
     );
 
@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.vpn_key),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Password",
+          hintText: "Contraseña",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
     );
 
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {},
           child: Text(
-            "Login",
+            "Ingresar",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
@@ -95,6 +95,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 35),
                   loginButton,
                   SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text("No tienes una cuenta? "),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Registrate",
+                          style: TextStyle(
+                              color: Color.fromRGBO(1, 103, 169, 1),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
