@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_auth/screens/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -52,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
     );
 
+    //login button
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(38),
@@ -100,9 +102,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       Text("No tienes una cuenta? "),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegistrationScreen()));
+                        },
                         child: Text(
-                          "Registrate",
+                          "Regístrate",
                           style: TextStyle(
                               color: Color.fromRGBO(1, 103, 169, 1),
                               fontWeight: FontWeight.bold,
