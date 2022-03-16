@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     //email field
     final emailField = TextFormField(
+      //style: TextStyle(fontSize: 18, color: Colors.red),
       autofocus: false,
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.vpn_key),
+          prefixIcon: Icon(Icons.password),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Contraseña",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),

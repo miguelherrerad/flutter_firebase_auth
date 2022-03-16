@@ -81,7 +81,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.vpn_key),
+          prefixIcon: Icon(Icons.password),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Contraseña",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
@@ -98,7 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.vpn_key),
+          prefixIcon: Icon(Icons.password),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Confirmar Contraseña",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
