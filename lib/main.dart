@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Email And PassWord Login',
+      title: 'Ingreso',
       theme: ThemeData(
         // This is the theme of your application.
         //
