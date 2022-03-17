@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/screens/home_screen.dart';
 import 'package:flutter_firebase_auth/screens/registration_screen.dart';
@@ -15,6 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   // editing controller
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
+  //firestore
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,16 @@ class _LoginScreenState extends State<LoginScreen> {
       autofocus: false,
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
-      //validator: () {},
+      validator: (value) {
+        if (value!.isEmpty) {
+          return ("Por favor ingresa tu correo");
+        }
+        //reg expression for email validation
+        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+          return ("Por favor ingrese un correo válido");
+        }
+        return null;
+      },
       onSaved: (value) {
         emailController.text = value!;
       },
@@ -40,10 +52,16 @@ class _LoginScreenState extends State<LoginScreen> {
     final passwordField = TextFormField(
       autofocus: false,
       controller: passwordController,
-
       obscureText: true,
-
-      //validator: () {},
+      validator: (value) {
+        RegExp regExp = new RegExp(r'^.{6,}$');
+        if (value!.isEmpty) {
+          return ("La contraseña es requerida para ingresar");
+        }
+        if (!regExp.hasMatch(value)) {
+          return ("Por favor ingresa una contraseña válida(Min. 6 Caracteres");
+        }
+      },
       onSaved: (value) {
         passwordController.text = value!;
       },
