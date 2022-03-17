@@ -59,10 +59,10 @@ class _LoginScreenState extends State<LoginScreen> {
       validator: (value) {
         RegExp regExp = new RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
-          return ("La contraseña es requerida para ingresar");
+          return ("Se requiere contraseña para ingresar");
         }
         if (!regExp.hasMatch(value)) {
-          return ("Por favor ingresa una contraseña válida(Min. 6 Caracteres");
+          return ("Ingresa una contraseña válida (Min. 6 Caracteres)");
         }
       },
       onSaved: (value) {
