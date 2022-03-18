@@ -132,8 +132,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       controller: confirmPasswordEditingController,
       obscureText: true,
       validator: (value) {
-        if (confirmPasswordEditingController.text.length > 6 &&
-            passwordEditingController.text != value) {
+        if (confirmPasswordEditingController.text !=
+            passwordEditingController.text) {
           return "La contraseña no coincide";
         }
         return null;
