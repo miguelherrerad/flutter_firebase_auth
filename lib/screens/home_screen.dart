@@ -69,7 +69,11 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 15,
               ),
-              ActionChip(label: Text("Salir"), onPressed: () {}),
+              ActionChip(
+                  label: Text("Salir"),
+                  onPressed: () {
+                    logout(context);
+                  }),
             ],
           ),
         ),
